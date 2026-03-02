@@ -1065,20 +1065,44 @@ img {
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* --- Tablet --- */
 @media (max-width: 1024px) {
-    .hero-content {
+    .hero-content-inner {
         flex-direction: column;
         text-align: center;
+    }
+
+    .hero-text {
+        flex: none;
+        width: 100%;
     }
 
     .hero-cta {
         display: block;
         max-width: 340px;
         margin: 0 auto;
+        text-align: center;
+    }
+
+    .hero-price-row {
+        justify-content: center;
     }
 
     .hero-image {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        max-height: 300px;
         order: -1;
+        margin-bottom: 20px;
+    }
+
+    .hero-image img {
+        object-fit: contain;
     }
 
     .hero-title {
@@ -1086,76 +1110,197 @@ img {
     }
 }
 
+/* --- Mobile (≤768px) --- */
 @media (max-width: 768px) {
+
+    /* Blue glow side borders (matching STUDIO site) */
+    body::before,
+    body::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 18px;
+        z-index: 9999;
+        pointer-events: none;
+    }
+
+    body::before {
+        left: 0;
+        background: linear-gradient(to right,
+                rgba(100, 160, 220, 0.45) 0%,
+                rgba(100, 160, 220, 0.2) 40%,
+                transparent 100%);
+    }
+
+    body::after {
+        right: 0;
+        background: linear-gradient(to left,
+                rgba(100, 160, 220, 0.45) 0%,
+                rgba(100, 160, 220, 0.2) 40%,
+                transparent 100%);
+    }
+
+    /* ---- Header mobile ---- */
+    .header-inner {
+        padding: 16px 20px;
+    }
+
+    .header-logo img {
+        height: 50px;
+    }
+
     .header-nav-label {
-        display: none;
+        font-size: 11px;
     }
 
     .header-buttons {
         gap: 6px;
     }
 
+    .btn-header-outline {
+        display: none;
+    }
+
     .btn-header {
-        padding: 6px 14px;
+        padding: 8px 18px;
         font-size: 12px;
     }
 
-    .hero-title {
-        font-size: 1.5rem;
+    /* ---- Hero mobile ---- */
+    .hero {
+        padding-top: 90px;
+        padding-bottom: 20px;
+        min-height: auto;
     }
 
     .hero-content {
-        padding: 40px 20px;
+        padding: 24px 20px 32px;
+        width: calc(100% - 24px);
+        min-height: auto;
+        border-radius: 16px;
+    }
+
+    .hero-content-inner {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .hero-text {
+        flex: none;
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: 1.55rem;
+        margin-bottom: 16px;
+        line-height: 1.6;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+        margin-bottom: 24px;
+        line-height: 1.8;
+    }
+
+    .hero-description br {
+        display: none;
+    }
+
+    .hero-cta {
+        text-align: center;
+    }
+
+    .hero-price-row {
+        justify-content: center;
+    }
+
+    .hero-image {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        width: 110%;
+        max-height: 220px;
+        order: -1;
+        margin: -10px -5% 16px;
+        overflow: hidden;
+    }
+
+    .hero-image img {
+        object-fit: contain;
+        max-width: 100%;
+    }
+
+    .btn-hero {
+        padding: 14px 32px;
+        font-size: 14px;
+    }
+
+    /* ---- Problem mobile ---- */
+    .problem {
+        padding: 60px 20px 48px;
     }
 
     .problem-title {
-        font-size: 1.3rem;
-        padding: 16px 28px;
+        font-size: 1.15rem;
+        padding: 16px 24px;
+        border-radius: 24px;
+        line-height: 1.7;
+    }
+
+    .problem-persona-img {
+        width: 100px;
     }
 
     .problem-lead {
-        font-size: 18px;
+        font-size: 17px;
+    }
+
+    .problem-check-item {
+        font-size: 14px;
+        padding: 12px 0;
+        gap: 10px;
     }
 
     .problem-solution-text {
-        font-size: 22px;
+        font-size: 20px;
         padding: 12px 32px;
     }
 
-    .benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
+    /* ---- Service mobile ---- */
+    .service {
+        padding: 60px 20px 60px;
     }
 
-    .plan-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-        padding: 24px 20px;
+    .service-logo-img {
+        max-width: 85%;
     }
 
-    .plan-row-price {
-        margin-left: 0;
+    .service-card {
+        padding: 32px 24px;
+        border-radius: 20px;
     }
 
-    .footer-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+    .service-title {
+        font-size: 1.3rem;
     }
 
-    .footer-middle {
-        flex-direction: column;
-        gap: 24px;
+    .service-description,
+    .service-sub {
+        font-size: 1rem;
     }
 
-    .footer-bottom {
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
+    /* ---- Feature mobile ---- */
+    .feature {
+        padding: 60px 20px;
     }
 
     .feature-inner {
         flex-direction: column;
+        gap: 24px;
     }
 
     .feature-left {
@@ -1163,12 +1308,102 @@ img {
         padding-top: 0;
     }
 
+    .feature-title {
+        font-size: 1.6rem;
+    }
+
     .feature-card {
-        padding: 32px 24px;
+        padding: 28px 20px;
+        border-radius: 16px;
+    }
+
+    .feature-card-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 28px;
+    }
+
+    .feature-step-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .feature-step-desc {
+        font-size: 14px;
+    }
+
+    .feature-step {
+        margin-bottom: 36px;
+    }
+
+    /* ---- Benefits mobile ---- */
+    .benefits {
+        padding: 60px 20px;
+    }
+
+    .benefits-title {
+        font-size: 1.6rem;
+        margin-bottom: 32px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .benefit-item {
+        padding: 14px 0;
+    }
+
+    .benefit-text {
+        font-size: 14px;
+    }
+
+    /* ---- Plan mobile ---- */
+    .plan {
+        padding: 60px 20px;
+    }
+
+    .plan-title {
+        font-size: 1.6rem;
+        margin-bottom: 32px;
+    }
+
+    .plan-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 24px 16px;
+    }
+
+    .plan-row-name {
+        font-size: 1.1rem;
+    }
+
+    .plan-row-desc {
+        font-size: 13px;
+    }
+
+    .plan-row-price {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+
+    .plan-price-value {
+        font-size: 1.6rem;
+    }
+
+    .btn-plan-cta {
+        font-size: 1.1rem;
+        padding: 16px 40px;
+    }
+
+    /* ---- FAQ mobile ---- */
+    .faq {
+        padding: 60px 20px;
     }
 
     .faq-inner {
         flex-direction: column;
+        gap: 24px;
     }
 
     .faq-left {
@@ -1176,35 +1411,174 @@ img {
         padding-top: 0;
     }
 
+    .faq-title {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+
+    .faq-contact-text {
+        font-size: 13px;
+    }
+
     .faq-card {
-        padding: 32px 24px;
-    }
-}
-
-@media (max-width: 540px) {
-    .hero-title {
-        font-size: 1.3rem;
+        padding: 24px 20px;
+        border-radius: 16px;
     }
 
-    .problem-title {
-        font-size: 1.1rem;
-        padding: 14px 24px;
-    }
-
-    .problem-check-item {
+    .faq-q-text {
         font-size: 14px;
     }
 
+    .faq-answer {
+        font-size: 13px;
+        padding-left: 36px;
+    }
+
+    .faq-item {
+        padding: 20px 0;
+    }
+
+    /* ---- Footer mobile ---- */
+    .site-footer {
+        padding: 40px 20px 20px;
+    }
+
+    .footer-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .footer-logo {
+        height: 40px;
+    }
+
+    .footer-header-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .btn-footer {
+        width: 100%;
+        text-align: center;
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .footer-middle {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-company {
+        font-size: 14px;
+    }
+
+    .footer-address,
+    .footer-contact {
+        font-size: 12px;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .footer-nav a {
+        font-size: 13px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .footer-legal a {
+        font-size: 11px;
+    }
+
+    .footer-copyright {
+        font-size: 11px;
+    }
+}
+
+/* --- Small mobile (≤540px) --- */
+@media (max-width: 540px) {
+    .hero-title {
+        font-size: 1.35rem;
+    }
+
+    .hero-price {
+        font-size: 2rem;
+    }
+
+    .hero-price-yen {
+        font-size: 1.1rem;
+    }
+
+    .problem-title {
+        font-size: 1rem;
+        padding: 14px 20px;
+    }
+
+    .problem-check-item {
+        font-size: 13px;
+    }
+
     .problem-solution-text {
-        font-size: 20px;
+        font-size: 18px;
         padding: 10px 24px;
     }
 
-    .benefits-grid {
-        grid-template-columns: 1fr;
+    .plan-row-name {
+        font-size: 1rem;
     }
 
-    .footer-actions {
-        flex-direction: column;
+    .btn-plan-cta {
+        font-size: 1rem;
+        padding: 14px 32px;
+    }
+}
+
+/* --- Very small mobile (≤375px) --- */
+@media (max-width: 375px) {
+    .header-inner {
+        padding: 12px 16px;
+    }
+
+    .header-logo img {
+        height: 42px;
+    }
+
+    .hero-content {
+        padding: 20px 16px 28px;
+        width: calc(100% - 16px);
+    }
+
+    .hero-title {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 0.8rem;
+    }
+
+    .problem-title {
+        font-size: 0.95rem;
+        padding: 12px 18px;
+    }
+
+    .service-card {
+        padding: 24px 18px;
+    }
+
+    .feature-card {
+        padding: 24px 16px;
+    }
+
+    .faq-card {
+        padding: 20px 16px;
     }
 }
