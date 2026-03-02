@@ -782,6 +782,12 @@ img {
     color: #1a1a2e;
 }
 
+.plan-row-price--outline {
+    border: 2px solid #1a1a2e;
+    padding: 8px 20px;
+    border-radius: 8px;
+}
+
 .plan-cta {
     margin-top: 48px;
     text-align: center;
