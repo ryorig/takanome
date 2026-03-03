@@ -82,6 +82,7 @@ img {
 .header-brand {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2px;
 }
 
@@ -91,10 +92,11 @@ img {
 }
 
 .header-nav-label {
-    font-size: 12px;
-    color: #666;
-    font-weight: 400;
-    padding-left: 2px;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
 }
 
 .header-buttons {
@@ -190,7 +192,10 @@ img {
 .hero-highlight {
     color: #0a68f5;
     font-weight: 900;
+    font-size: 1.3em;
     position: relative;
+    display: inline-block;
+    animation: highlightPop 0.8s ease-out 0.6s both;
 }
 
 .hero-highlight::after {
@@ -278,6 +283,34 @@ img {
     display: block;
     z-index: 1;
     pointer-events: none;
+    animation: hawkFlyIn 1s ease-out both;
+}
+
+/* ===== HERO ANIMATIONS ===== */
+@keyframes hawkFlyIn {
+    0% {
+        opacity: 0;
+        transform: translateX(120px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes highlightPop {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.3);
+    }
+    70% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .hero-image img {
@@ -397,7 +430,7 @@ img {
     width: 18px;
     height: 18px;
     border: 2px solid #ccc;
-    border-radius: 3px;
+    border-radius: 0;
     display: inline-block;
 }
 
@@ -523,7 +556,7 @@ img {
 .feature-badge {
     font-size: 14px;
     font-weight: 700;
-    color: #55b9da;
+    color: #3A5D0C;
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
@@ -603,7 +636,7 @@ img {
 }
 
 .feature-step-desc {
-    font-size: 15px;
+    font-size: 18px;
     color: #333;
     line-height: 1.8;
 }
@@ -622,7 +655,7 @@ img {
 .benefits-badge {
     font-size: 14px;
     font-weight: 700;
-    color: #55b9da;
+    color: #3A5D0C;
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
@@ -681,7 +714,7 @@ img {
     display: inline-block;
     font-size: 14px;
     font-weight: 700;
-    color: #55b9da;
+    color: #3A5D0C;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 4px;
@@ -690,7 +723,7 @@ img {
 .plan-badge-line {
     width: 20px;
     height: 2px;
-    background: #55b9da;
+    background: #3A5D0C;
     margin: 0 auto 12px;
 }
 
@@ -835,7 +868,7 @@ img {
 .faq-badge {
     font-size: 14px;
     font-weight: 700;
-    color: #55b9da;
+    color: #3A5D0C;
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
@@ -1151,7 +1184,7 @@ img {
     }
 
     .header-nav-label {
-        font-size: 11px;
+        font-size: 13px;
     }
 
     .header-buttons {
@@ -1327,7 +1360,7 @@ img {
     }
 
     .feature-step-desc {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .feature-step {
