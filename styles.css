@@ -1,3 +1,21 @@
+/* ===== TYPOGRAPHY TOKENS ===== */
+:root {
+    /* --- PC font-size scale (統一スケール) --- */
+    --font-size-hero-title: 2.75rem;       /* 44px  ヒーロー見出し */
+    --font-size-section-title: 2rem;       /* 32px  セクション見出し */
+    --font-size-section-subtitle: 1.5rem;  /* 24px  セクション副題 */
+    --font-size-card-title: 1.25rem;       /* 20px  カード見出し */
+    --font-size-body: 1rem;                /* 16px  本文 */
+    --font-size-small: 0.875rem;           /* 14px  補足テキスト */
+    --font-size-caption: 0.8125rem;        /* 13px  キャプション */
+    --font-size-badge: 0.875rem;           /* 14px  バッジラベル */
+
+    --color-heading: #1a1a2e;
+    --color-body: #555;
+    --color-muted: #888;
+    --color-badge: #3A5D0C;
+}
+
 /* ===== RESET & BASE ===== */
 *,
 *::before,
@@ -92,7 +110,7 @@ img {
 }
 
 .header-nav-label {
-    font-size: 16px;
+    font-size: var(--font-size-small);
     color: #333;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -108,7 +126,7 @@ img {
 .btn-header {
     padding: 10px 24px;
     border-radius: 50px;
-    font-size: 14px;
+    font-size: var(--font-size-small);
     font-weight: 600;
     transition: all 0.2s ease;
     white-space: nowrap;
@@ -145,7 +163,7 @@ img {
     display: flex;
     align-items: center;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -175,14 +193,14 @@ img {
 }
 
 .hero-text {
-    flex: 0 0 48%;
+    flex: 0 0 55%;
     min-width: 0;
     position: relative;
     z-index: 2;
 }
 
 .hero-title {
-    font-size: 45px;
+    font-size: var(--font-size-hero-title);
     font-weight: 800;
     line-height: 1.5;
     color: #333;
@@ -192,7 +210,7 @@ img {
 .hero-highlight {
     color: #0a68f5;
     font-weight: 900;
-    font-size: 1.3em;
+    font-size: 1.15em;
     position: relative;
     display: inline-block;
     animation: highlightPop 0.8s ease-out 0.6s both;
@@ -210,9 +228,9 @@ img {
 }
 
 .hero-description {
-    font-size: 1rem;
+    font-size: var(--font-size-body);
     line-height: 1.9;
-    color: #555;
+    color: var(--color-body);
     margin-bottom: 32px;
 }
 
@@ -233,13 +251,13 @@ img {
 }
 
 .hero-cta-label {
-    font-size: 16px;
+    font-size: var(--font-size-body);
     font-weight: 700;
     color: #333;
 }
 
 .hero-cta-sub {
-    font-size: 12px;
+    font-size: var(--font-size-caption);
     color: #888;
     margin-bottom: 20px;
 }
@@ -261,7 +279,7 @@ img {
     padding: 16px 36px;
     background: #3A5D0C;
     color: #fff;
-    font-size: 15px;
+    font-size: var(--font-size-body);
     font-weight: 700;
     border-radius: 50px;
     transition: all 0.3s ease;
@@ -276,10 +294,10 @@ img {
 
 .hero-image {
     position: absolute;
-    top: -126px;
-    left: 354px;
-    right: -329px;
-    bottom: -199px;
+    top: -200px;
+    left: 38%;
+    right: -320px;
+    bottom: -250px;
     display: block;
     z-index: 1;
     pointer-events: none;
@@ -292,6 +310,7 @@ img {
         opacity: 0;
         transform: translateX(120px);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -302,12 +321,15 @@ img {
     0% {
         transform: scale(1);
     }
+
     40% {
         transform: scale(1.3);
     }
+
     70% {
         transform: scale(0.95);
     }
+
     100% {
         transform: scale(1);
     }
@@ -318,7 +340,8 @@ img {
     height: 100%;
     max-width: none;
     border-radius: 0;
-    object-fit: fill;
+    object-fit: contain;
+    object-position: center center;
 }
 
 /* ===== PROBLEM SECTION ===== */
@@ -335,9 +358,9 @@ img {
 
 .problem-badge {
     display: inline-block;
-    font-size: 16px;
+    font-size: var(--font-size-badge);
     font-weight: 700;
-    color: #3a5d0c;
+    color: var(--color-badge);
     letter-spacing: 2px;
     margin-bottom: 4px;
 }
@@ -351,7 +374,7 @@ img {
 
 .problem-title {
     display: inline-block;
-    font-size: 1.6rem;
+    font-size: var(--font-size-section-subtitle);
     font-weight: 900;
     line-height: 1.8;
     color: #fff;
@@ -383,22 +406,22 @@ img {
 }
 
 .problem-persona-text {
-    font-size: 14px;
+    font-size: var(--font-size-small);
     font-weight: 600;
     color: #555;
 }
 
 .problem-lead {
-    font-size: 22px;
+    font-size: var(--font-size-card-title);
     font-weight: 700;
-    color: #333;
+    color: var(--color-heading);
     margin-bottom: 24px;
     text-align: left;
 }
 
 .problem-lead-asterisk {
     color: #e74c3c;
-    font-size: 16px;
+    font-size: var(--font-size-body);
     vertical-align: super;
     margin-left: 2px;
 }
@@ -415,8 +438,8 @@ img {
     gap: 12px;
     padding: 14px 0;
     border-bottom: 1px solid #e0e0e0;
-    font-size: 16px;
-    color: #333;
+    font-size: var(--font-size-body);
+    color: var(--color-heading);
     cursor: default;
     text-align: left;
 }
@@ -449,7 +472,7 @@ img {
 
 .problem-solution-text {
     display: inline-block;
-    font-size: 28px;
+    font-size: var(--font-size-section-subtitle);
     font-weight: 900;
     color: #3a5d0c;
     background: #e9ff00;
@@ -486,7 +509,7 @@ img {
 
 .service-label {
     display: inline-block;
-    font-size: 18px;
+    font-size: var(--font-size-body);
     font-weight: 700;
     color: #6aab3d;
     letter-spacing: 2px;
@@ -501,25 +524,25 @@ img {
 }
 
 .service-title {
-    font-size: 1.5rem;
+    font-size: var(--font-size-card-title);
     font-weight: 700;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--color-heading);
 }
 
 .service-description {
-    font-size: 1.2rem;
+    font-size: var(--font-size-body);
     line-height: 2;
     font-weight: 700;
     margin-bottom: 8px;
-    color: #333;
+    color: var(--color-body);
 }
 
 .service-sub {
-    font-size: 1.2rem;
+    font-size: var(--font-size-body);
     line-height: 2;
     font-weight: 700;
-    color: #333;
+    color: var(--color-body);
 }
 
 .service-keyword {
@@ -544,27 +567,27 @@ img {
     margin: 0 auto;
     display: flex;
     align-items: flex-start;
-    gap: 40px;
+    gap: 60px;
 }
 
 .feature-left {
     flex-shrink: 0;
-    width: 220px;
+    width: 280px;
     padding-top: 24px;
 }
 
 .feature-badge {
-    font-size: 14px;
+    font-size: var(--font-size-badge);
     font-weight: 700;
-    color: #3A5D0C;
+    color: var(--color-badge);
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
 
 .feature-title {
-    font-size: 2rem;
+    font-size: 2.25rem;
     font-weight: 900;
-    color: #1a1a2e;
+    color: var(--color-heading);
     line-height: 1.3;
 }
 
@@ -579,7 +602,7 @@ img {
 }
 
 .feature-card-subtitle {
-    font-size: 1.3rem;
+    font-size: var(--font-size-card-title);
     font-weight: 700;
     color: #6aab3d;
     text-align: center;
@@ -610,15 +633,15 @@ img {
     border-radius: 50%;
     background: #6aab3d;
     color: #fff;
-    font-size: 14px;
+    font-size: var(--font-size-small);
     font-weight: 700;
     flex-shrink: 0;
 }
 
 .feature-step-header h3 {
-    font-size: 1.3rem;
+    font-size: var(--font-size-card-title);
     font-weight: 700;
-    color: #1a1a2e;
+    color: var(--color-heading);
     margin: 0;
 }
 
@@ -636,8 +659,8 @@ img {
 }
 
 .feature-step-desc {
-    font-size: 18px;
-    color: #333;
+    font-size: var(--font-size-body);
+    color: var(--color-body);
     line-height: 1.8;
 }
 
@@ -653,17 +676,17 @@ img {
 }
 
 .benefits-badge {
-    font-size: 14px;
+    font-size: var(--font-size-badge);
     font-weight: 700;
-    color: #3A5D0C;
+    color: var(--color-badge);
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
 
 .benefits-title {
-    font-size: 2rem;
+    font-size: var(--font-size-section-title);
     font-weight: 900;
-    color: #1a1a2e;
+    color: var(--color-heading);
     margin-bottom: 48px;
 }
 
@@ -688,9 +711,9 @@ img {
 }
 
 .benefit-text {
-    font-size: 14px;
+    font-size: var(--font-size-body);
     font-weight: 600;
-    color: #333;
+    color: var(--color-heading);
     line-height: 1.5;
 }
 
@@ -712,9 +735,9 @@ img {
 
 .plan-badge {
     display: inline-block;
-    font-size: 14px;
+    font-size: var(--font-size-badge);
     font-weight: 700;
-    color: #3A5D0C;
+    color: var(--color-badge);
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 4px;
@@ -728,9 +751,9 @@ img {
 }
 
 .plan-title {
-    font-size: 2rem;
+    font-size: var(--font-size-section-title);
     font-weight: 900;
-    color: #1a1a2e;
+    color: var(--color-heading);
     margin-bottom: 48px;
 }
 
@@ -758,15 +781,15 @@ img {
 }
 
 .plan-row-name {
-    font-size: 1.3rem;
+    font-size: var(--font-size-card-title);
     font-weight: 700;
-    color: #1a1a2e;
+    color: var(--color-heading);
     margin: 0 0 8px;
 }
 
 .plan-row-desc {
-    font-size: 14px;
-    color: #666;
+    font-size: var(--font-size-body);
+    color: var(--color-body);
     line-height: 1.6;
     margin-bottom: 12px;
 }
@@ -782,14 +805,14 @@ img {
     display: inline-block;
     background: #1a1a2e;
     color: #fff;
-    font-size: 13px;
+    font-size: var(--font-size-caption);
     font-weight: 600;
     padding: 5px 14px;
     border-radius: 4px;
 }
 
 .plan-tag-separator {
-    font-size: 14px;
+    font-size: var(--font-size-small);
     color: #666;
     font-weight: 700;
 }
@@ -830,7 +853,7 @@ img {
     display: inline-block;
     background: #1a1a2e;
     color: #e9ff00;
-    font-size: 1.3rem;
+    font-size: var(--font-size-card-title);
     font-weight: 900;
     padding: 18px 48px;
     border-radius: 40px;
@@ -856,34 +879,34 @@ img {
     margin: 0 auto;
     display: flex;
     align-items: flex-start;
-    gap: 40px;
+    gap: 60px;
 }
 
 .faq-left {
     flex-shrink: 0;
-    width: 220px;
+    width: 280px;
     padding-top: 24px;
 }
 
 .faq-badge {
-    font-size: 14px;
+    font-size: var(--font-size-badge);
     font-weight: 700;
-    color: #3A5D0C;
+    color: var(--color-badge);
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
 
 .faq-title {
-    font-size: 2rem;
+    font-size: 2.25rem;
     font-weight: 900;
-    color: #1a1a2e;
+    color: var(--color-heading);
     margin-bottom: 20px;
     line-height: 1.3;
 }
 
 .faq-contact-text {
-    font-size: 14px;
-    color: #666;
+    font-size: var(--font-size-small);
+    color: var(--color-muted);
     line-height: 1.8;
 }
 
@@ -927,23 +950,23 @@ img {
     border-radius: 50%;
     background: #6aab3d;
     color: #fff;
-    font-size: 14px;
+    font-size: var(--font-size-small);
     font-weight: 700;
     flex-shrink: 0;
     margin-top: 2px;
 }
 
 .faq-q-text {
-    font-size: 15px;
+    font-size: var(--font-size-body);
     font-weight: 700;
-    color: #1a1a2e;
+    color: var(--color-heading);
     margin: 0;
     line-height: 1.6;
 }
 
 .faq-answer {
-    font-size: 14px;
-    color: #555;
+    font-size: var(--font-size-body);
+    color: var(--color-body);
     line-height: 1.8;
     padding-left: 40px;
 }
@@ -982,7 +1005,7 @@ img {
 .btn-footer {
     padding: 10px 24px;
     border-radius: 50px;
-    font-size: 13px;
+    font-size: var(--font-size-caption);
     font-weight: 600;
     transition: all 0.2s ease;
     white-space: nowrap;
@@ -1022,20 +1045,20 @@ img {
 }
 
 .footer-company {
-    font-size: 15px;
+    font-size: var(--font-size-body);
     font-weight: 700;
     color: #1a1a2e;
     margin-bottom: 8px;
 }
 
 .footer-address {
-    font-size: 13px;
+    font-size: var(--font-size-caption);
     color: #666;
     margin-bottom: 4px;
 }
 
 .footer-contact {
-    font-size: 13px;
+    font-size: var(--font-size-caption);
     color: #666;
 }
 
@@ -1056,7 +1079,7 @@ img {
 }
 
 .footer-nav a {
-    font-size: 14px;
+    font-size: var(--font-size-small);
     color: #333;
     font-weight: 500;
     transition: color 0.2s ease;
@@ -1083,7 +1106,7 @@ img {
 }
 
 .footer-legal a {
-    font-size: 12px;
+    font-size: var(--font-size-caption);
     color: #888;
     transition: color 0.2s ease;
 }
@@ -1093,11 +1116,30 @@ img {
 }
 
 .footer-copyright {
-    font-size: 12px;
+    font-size: var(--font-size-caption);
     color: #888;
 }
 
 /* ===== RESPONSIVE ===== */
+
+/* --- Laptop / narrow PC (≤1280px) --- */
+@media (max-width: 1280px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hero-title br {
+        display: none;
+    }
+
+    .hero-description br {
+        display: none;
+    }
+
+    .hero-content {
+        padding: 40px 48px;
+    }
+}
 
 /* --- Tablet --- */
 @media (max-width: 1024px) {
@@ -1139,12 +1181,28 @@ img {
     }
 
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+
+    .hero-description br {
+        display: none;
     }
 }
 
 /* --- Mobile (≤768px) --- */
 @media (max-width: 768px) {
+
+    /* Typography token overrides for mobile */
+    :root {
+        --font-size-hero-title: 1.55rem;
+        --font-size-section-title: 1.6rem;
+        --font-size-section-subtitle: 1.25rem;
+        --font-size-card-title: 1.1rem;
+        --font-size-body: 0.875rem;
+        --font-size-small: 0.8125rem;
+        --font-size-caption: 0.75rem;
+        --font-size-badge: 0.8125rem;
+    }
 
     /* Blue glow side borders (matching STUDIO site) */
     body::before,
@@ -1184,7 +1242,7 @@ img {
     }
 
     .header-nav-label {
-        font-size: 13px;
+        font-size: var(--font-size-small);
     }
 
     .header-buttons {
@@ -1197,7 +1255,7 @@ img {
 
     .btn-header {
         padding: 8px 18px;
-        font-size: 12px;
+        font-size: var(--font-size-caption);
     }
 
     /* ---- Hero mobile ---- */
@@ -1226,13 +1284,13 @@ img {
     }
 
     .hero-title {
-        font-size: 1.55rem;
+        font-size: var(--font-size-hero-title);
         margin-bottom: 16px;
         line-height: 1.6;
     }
 
     .hero-description {
-        font-size: 0.85rem;
+        font-size: var(--font-size-body);
         margin-bottom: 24px;
         line-height: 1.8;
     }
@@ -1278,7 +1336,7 @@ img {
     }
 
     .problem-title {
-        font-size: 1.15rem;
+        font-size: var(--font-size-section-subtitle);
         padding: 16px 24px;
         border-radius: 24px;
         line-height: 1.7;
@@ -1289,17 +1347,17 @@ img {
     }
 
     .problem-lead {
-        font-size: 17px;
+        font-size: var(--font-size-card-title);
     }
 
     .problem-check-item {
-        font-size: 14px;
+        font-size: var(--font-size-body);
         padding: 12px 0;
         gap: 10px;
     }
 
     .problem-solution-text {
-        font-size: 20px;
+        font-size: var(--font-size-card-title);
         padding: 12px 32px;
     }
 
@@ -1317,14 +1375,7 @@ img {
         border-radius: 20px;
     }
 
-    .service-title {
-        font-size: 1.3rem;
-    }
-
-    .service-description,
-    .service-sub {
-        font-size: 1rem;
-    }
+    /* service-title, service-description, service-sub now use tokens */
 
     /* ---- Feature mobile ---- */
     .feature {
@@ -1341,9 +1392,7 @@ img {
         padding-top: 0;
     }
 
-    .feature-title {
-        font-size: 1.6rem;
-    }
+    /* feature-title now uses token */
 
     .feature-card {
         padding: 28px 20px;
@@ -1351,17 +1400,11 @@ img {
     }
 
     .feature-card-subtitle {
-        font-size: 1.1rem;
+        font-size: var(--font-size-card-title);
         margin-bottom: 28px;
     }
 
-    .feature-step-header h3 {
-        font-size: 1.1rem;
-    }
-
-    .feature-step-desc {
-        font-size: 16px;
-    }
+    /* feature-step-header h3, feature-step-desc now use tokens */
 
     .feature-step {
         margin-bottom: 36px;
@@ -1373,7 +1416,6 @@ img {
     }
 
     .benefits-title {
-        font-size: 1.6rem;
         margin-bottom: 32px;
     }
 
@@ -1386,9 +1428,7 @@ img {
         padding: 14px 0;
     }
 
-    .benefit-text {
-        font-size: 14px;
-    }
+    /* benefit-text now uses token */
 
     /* ---- Plan mobile ---- */
     .plan {
@@ -1396,7 +1436,6 @@ img {
     }
 
     .plan-title {
-        font-size: 1.6rem;
         margin-bottom: 32px;
     }
 
@@ -1407,13 +1446,7 @@ img {
         padding: 24px 16px;
     }
 
-    .plan-row-name {
-        font-size: 1.1rem;
-    }
-
-    .plan-row-desc {
-        font-size: 13px;
-    }
+    /* plan-row-name, plan-row-desc now use tokens */
 
     .plan-row-price {
         margin-left: 0;
@@ -1425,7 +1458,7 @@ img {
     }
 
     .btn-plan-cta {
-        font-size: 1.1rem;
+        font-size: var(--font-size-card-title);
         padding: 16px 40px;
     }
 
@@ -1445,25 +1478,19 @@ img {
     }
 
     .faq-title {
-        font-size: 1.6rem;
         margin-bottom: 12px;
     }
 
-    .faq-contact-text {
-        font-size: 13px;
-    }
+    /* faq-contact-text now uses token */
 
     .faq-card {
         padding: 24px 20px;
         border-radius: 16px;
     }
 
-    .faq-q-text {
-        font-size: 14px;
-    }
+    /* faq-q-text now uses token */
 
     .faq-answer {
-        font-size: 13px;
         padding-left: 36px;
     }
 
@@ -1496,7 +1523,7 @@ img {
         width: 100%;
         text-align: center;
         padding: 10px 20px;
-        font-size: 13px;
+        font-size: var(--font-size-caption);
     }
 
     .footer-middle {
@@ -1505,12 +1532,12 @@ img {
     }
 
     .footer-company {
-        font-size: 14px;
+        font-size: var(--font-size-body);
     }
 
     .footer-address,
     .footer-contact {
-        font-size: 12px;
+        font-size: var(--font-size-caption);
     }
 
     .footer-nav {
@@ -1519,7 +1546,7 @@ img {
     }
 
     .footer-nav a {
-        font-size: 13px;
+        font-size: var(--font-size-caption);
     }
 
     .footer-bottom {
@@ -1529,18 +1556,20 @@ img {
     }
 
     .footer-legal a {
-        font-size: 11px;
+        font-size: var(--font-size-caption);
     }
 
     .footer-copyright {
-        font-size: 11px;
+        font-size: var(--font-size-caption);
     }
 }
 
 /* --- Small mobile (≤540px) --- */
 @media (max-width: 540px) {
-    .hero-title {
-        font-size: 1.35rem;
+    :root {
+        --font-size-hero-title: 1.35rem;
+        --font-size-section-subtitle: 1.1rem;
+        --font-size-card-title: 1rem;
     }
 
     .hero-price {
@@ -1552,31 +1581,26 @@ img {
     }
 
     .problem-title {
-        font-size: 1rem;
         padding: 14px 20px;
     }
 
-    .problem-check-item {
-        font-size: 13px;
-    }
-
     .problem-solution-text {
-        font-size: 18px;
         padding: 10px 24px;
     }
 
-    .plan-row-name {
-        font-size: 1rem;
-    }
-
     .btn-plan-cta {
-        font-size: 1rem;
         padding: 14px 32px;
     }
 }
 
 /* --- Very small mobile (≤375px) --- */
 @media (max-width: 375px) {
+    :root {
+        --font-size-hero-title: 1.2rem;
+        --font-size-section-subtitle: 0.95rem;
+        --font-size-body: 0.8rem;
+    }
+
     .header-inner {
         padding: 12px 16px;
     }
@@ -1590,16 +1614,7 @@ img {
         width: calc(100% - 16px);
     }
 
-    .hero-title {
-        font-size: 1.2rem;
-    }
-
-    .hero-description {
-        font-size: 0.8rem;
-    }
-
     .problem-title {
-        font-size: 0.95rem;
         padding: 12px 18px;
     }
 
