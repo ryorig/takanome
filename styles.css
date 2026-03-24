@@ -440,21 +440,52 @@ img {
     border-bottom: 1px solid #e0e0e0;
     font-size: var(--font-size-body);
     color: var(--color-heading);
-    cursor: default;
+    cursor: pointer;
     text-align: left;
+    user-select: none;
 }
 
 .problem-check-item:first-child {
     border-top: 1px solid #e0e0e0;
 }
 
+/* 実際のinputは非表示 */
 .problem-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* カスタムチェックボックスの見た目 */
+.problem-checkbox-icon {
     flex-shrink: 0;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     border: 2px solid #ccc;
-    border-radius: 0;
-    display: inline-block;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* チェック時のスタイル */
+.problem-checkbox:checked + .problem-checkbox-icon {
+    background: #3A5D0C;
+    border-color: #3A5D0C;
+}
+
+.problem-checkbox:checked + .problem-checkbox-icon::after {
+    content: '';
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+    margin-bottom: 2px;
 }
 
 .problem-keyword {
